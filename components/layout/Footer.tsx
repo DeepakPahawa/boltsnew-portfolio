@@ -1,5 +1,5 @@
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   return (
@@ -83,7 +83,7 @@ export default function Footer() {
                   href="mailto:hello@example.com"
                   className="hover:text-foreground transition-colors"
                 >
-                  deepakpahawa19@gmail.com
+                  rohansharma@gmail.com
                 </a>
               </p>
               <p>

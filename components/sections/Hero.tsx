@@ -1,29 +1,26 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { useThemeStore, getBackgroundClass } from '@/lib/theme';
-import { useTheme } from 'next-themes';
+import Image from "next/image";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { useThemeStore, getBackgroundClass } from "@/lib/theme";
+import { useTheme } from "next-themes";
 
 export default function Hero() {
   const { backgroundStyle } = useThemeStore();
   const { theme } = useTheme();
-  const isDark = theme === 'dark';
+  const isDark = theme === "dark";
   const backgroundClass = getBackgroundClass(backgroundStyle, isDark === true);
 
   return (
-    <section 
-      id="home" 
-      className={cn(
-        "min-h-screen flex items-center pt-20", 
-        backgroundClass
-      )}
+    <section
+      id="home"
+      className={cn("min-h-screen flex items-center pt-20", backgroundClass)}
     >
       <div className="container-custom grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 py-12 md:py-20">
-        <motion.div 
+        <motion.div
           className="flex flex-col justify-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,8 +33,10 @@ export default function Hero() {
           >
             <p className="text-primary font-medium mb-2">{`Hello, I'm`}</p>
             <h1 className="heading-xl mb-6">
-              Deepak Pahawa
-              <span className="block text-primary">Full Stack Developer</span>
+              Rohan Sharma
+              <span className="block text-primary">
+                Senior JavaScript Engineer{" "}
+              </span>
             </h1>
             <p className="text-muted-foreground text-lg mb-8 max-w-md">
               I build exceptional digital experiences with modern technologies.
@@ -45,7 +44,7 @@ export default function Hero() {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="flex flex-wrap gap-4 mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -61,19 +60,29 @@ export default function Hero() {
             </Button>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="flex gap-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
             <Button variant="ghost" size="icon" asChild>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
                 <Github className="h-5 w-5" />
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
             </Button>
@@ -85,7 +94,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="flex items-center justify-center order-first md:order-last"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
