@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { NextRequest, NextResponse } from "next/server";
 import { model } from "@/lib/gemini";
 import { GET as getResume } from "../train/route";
