@@ -1,4 +1,4 @@
-// export const runtime = "edge"; // Works fine with Edge
+export const runtime = "edge"; // Works fine with Edge
 
 import { ResumeStorage } from "@/lib/ResumeStorage";
 import { NextRequest, NextResponse } from "next/server";
