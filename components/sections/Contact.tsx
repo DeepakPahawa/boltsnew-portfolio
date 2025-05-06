@@ -85,7 +85,7 @@ export default function Contact() {
         >
           <h2 className="heading-lg mb-4">Get In Touch</h2>
           <p className="text-muted-foreground mx-auto max-w-2xl">
-            Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
+            {`Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.`}
           </p>
         </motion.div>
 

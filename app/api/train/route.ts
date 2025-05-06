@@ -10,7 +10,6 @@ export async function POST(req: NextRequest) {
     const resumeStorage = ResumeStorage.getInstance();
     resumeStorage.setResumeContent(resumeContent);
 
-    console.log("🚀 ~ POST ~ resumeContent:", resumeStorage.getResumeContent());
     return NextResponse.json({
       success: true,
       message: "Resume stored successfully",
