@@ -257,15 +257,27 @@ export const useResumeChat = () => {
 
   // Generate response to a question
   const askQuestion = async (question: string) => {
-    if (!resumeData) {
-      return {
-        content: "Please upload a resume first so I can provide accurate information.",
-        citations: []
-      };
-    }
+    // if (!resumeData) {
+    //   return {
+    //     content: "Please upload a resume first so I can provide accurate information.",
+    //     citations: []
+    //   };
+    // }
     
     try {
-      return await generateDummyAIResponse(question, resumeData);
+      const response = await fetch("/api/chat", {
+      method: "POST",
+      body: JSON.stringify({ question }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const res = await response.json();
+    const result = {
+      content: res.answer,
+    }
+
+    return result;
+    
     } catch (err) {
       console.error('Error generating response:', err);
       return {

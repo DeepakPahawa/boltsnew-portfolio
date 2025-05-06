@@ -100,15 +100,15 @@ export default function Contact() {
             <div className="space-y-6">
               <div>
                 <h4 className="font-semibold text-lg mb-1">Location</h4>
-                <p className="text-muted-foreground">San Francisco, California</p>
+                <p className="text-muted-foreground">Bangalore, India</p>
               </div>
               <div>
                 <h4 className="font-semibold text-lg mb-1">Email</h4>
-                <p className="text-muted-foreground">hello@example.com</p>
+                <p className="text-muted-foreground">deepakpahawa19@gmail.com</p>
               </div>
               <div>
                 <h4 className="font-semibold text-lg mb-1">Phone</h4>
-                <p className="text-muted-foreground">+1 (234) 567-890</p>
+                <p className="text-muted-foreground">+91-99XXXX6068</p>
               </div>
             </div>
             

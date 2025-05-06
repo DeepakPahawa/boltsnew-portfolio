@@ -9,7 +9,8 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">Portfolio</h3>
             <p className="text-muted-foreground mb-4 max-w-md">
-              A showcase of my professional work, skills, and achievements. Let's connect and build something amazing together.
+              A showcase of my professional work, skills, and achievements.
+              Let's connect and build something amazing together.
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" aria-label="GitHub">
@@ -30,26 +31,77 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4">Navigation</h4>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-muted-foreground hover:text-foreground transition-colors">Home</a></li>
-              <li><a href="#experience" className="text-muted-foreground hover:text-foreground transition-colors">Experience</a></li>
-              <li><a href="#skills" className="text-muted-foreground hover:text-foreground transition-colors">Skills</a></li>
-              <li><a href="#achievements" className="text-muted-foreground hover:text-foreground transition-colors">Achievements</a></li>
-              <li><a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a></li>
+              <li>
+                <a
+                  href="#home"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#experience"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Experience
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Skills
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#achievements"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Achievements
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact</h4>
             <address className="not-italic text-muted-foreground space-y-2">
-              <p>San Francisco, CA</p>
-              <p><a href="mailto:hello@example.com" className="hover:text-foreground transition-colors">hello@example.com</a></p>
-              <p><a href="tel:+1234567890" className="hover:text-foreground transition-colors">+1 (234) 567-890</a></p>
+              <p>Bangalore, KA</p>
+              <p>
+                <a
+                  href="mailto:hello@example.com"
+                  className="hover:text-foreground transition-colors"
+                >
+                  deepakpahawa19@gmail.com
+                </a>
+              </p>
+              <p>
+                <a
+                  href="tel:+1234567890"
+                  className="hover:text-foreground transition-colors"
+                >
+                  +91-99XXXX6068
+                </a>
+              </p>
             </address>
           </div>
         </div>
-        
+
         <div className="mt-12 pt-8 border-t text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Portfolio. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Portfolio. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

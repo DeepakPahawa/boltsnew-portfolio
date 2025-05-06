@@ -21,7 +21,7 @@ export default function Home() {
         <Contact />
         <Footer />
         <ResumeAIChatbot />
-        <ChatPage />
+        {/* <ChatPage /> */}
       </main>
     </ThemeProvider>
   );

@@ -17,10 +17,10 @@ interface Message {
   content: string;
   sender: 'user' | 'bot';
   timestamp: Date;
-  citations?: {
-    source: string;
-    text: string;
-  }[];
+  // citations?: {
+  //   source: string;
+  //   text: string;
+  // }[];
 }
 
 interface SuggestedQuestion {
@@ -49,7 +49,7 @@ const ResumeAIChatbot: React.FC<{ isDarkMode?: boolean }> = ({ isDarkMode = fals
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '0',
-      content: "Hello! I'm an AI assistant trained on this candidate's resume. How can I help you today?",
+      content: "Hello! I'm an AI assistant trained on this Deepak Pahawa's resume. How can I help you today?",
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -104,10 +104,9 @@ const ResumeAIChatbot: React.FC<{ isDarkMode?: boolean }> = ({ isDarkMode = fals
       // Add bot message
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: response.content,
+        content: response?.content ?? "",
         sender: 'bot',
         timestamp: new Date(),
-        citations: response.citations
       };
       
       setMessages((prev) => [...prev, botMessage]);
@@ -251,7 +250,7 @@ const ResumeAIChatbot: React.FC<{ isDarkMode?: boolean }> = ({ isDarkMode = fals
                 <Bot size={18} className="text-white" />
               </Avatar>
               <div>
-                <h3 className="font-medium text-sm">Resume AI Assistant</h3>
+                <h3 className="font-medium text-sm">{`Deepak's AI Assistant`}</h3>
                 {isLoading && <p className="text-xs opacity-70">Typing...</p>}
               </div>
             </div>
