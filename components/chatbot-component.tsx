@@ -288,7 +288,7 @@ const ResumeAIChatbot: React.FC<{ isDarkMode?: boolean }> = ({ isDarkMode = fals
                         <p className="text-sm">{msg.content}</p>
                         
                         {/* Show citations if available */}
-                        {msg.citations && msg.citations.length > 0 && (
+                        {/* {msg.citations && msg.citations.length > 0 && (
                           <div className={`mt-2 pt-2 border-t ${
                             isDarkMode ? 'border-gray-600' : 'border-gray-300'
                           } border-opacity-20`}>
@@ -298,7 +298,7 @@ const ResumeAIChatbot: React.FC<{ isDarkMode?: boolean }> = ({ isDarkMode = fals
                               </div>
                             ))}
                           </div>
-                        )}
+                        )} */}
                         
                         <p className="text-xs opacity-70 mt-1">
                           {msg.timestamp.toLocaleTimeString([], {
