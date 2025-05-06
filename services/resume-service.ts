@@ -106,7 +106,7 @@ export const parseResumeFromFile = async (file: File): Promise<ResumeData> => {
 };
 
 // Generate AI response based on the question and resume data
-export const generateAIResponse = async (
+export const generateDummyAIResponse = async (
   question: string, 
   resumeData: ResumeData
 ): Promise<ChatbotResponse> => {
@@ -265,7 +265,7 @@ export const useResumeChat = () => {
     }
     
     try {
-      return await generateAIResponse(question, resumeData);
+      return await generateDummyAIResponse(question, resumeData);
     } catch (err) {
       console.error('Error generating response:', err);
       return {
