@@ -33,7 +33,7 @@ export default function Hero() {
           >
             <p className="text-primary font-medium mb-2">{`Hello, I'm`}</p>
             <h1 className="heading-xl mb-6">
-              Rohan Sharma
+              Roy Arora
               <span className="block text-primary">
                 Senior JavaScript Engineer{" "}
               </span>
