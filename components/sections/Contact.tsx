@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { z } from 'zod';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Send } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { useThemeStore, getBackgroundClass } from '@/lib/theme';
-import { useTheme } from 'next-themes';
-import { useToast } from '@/hooks/use-toast';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Send } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useThemeStore, getBackgroundClass } from "@/lib/theme";
+import { useTheme } from "next-themes";
+import { useToast } from "@/hooks/use-toast";
 import {
   Form,
   FormControl,
@@ -17,23 +17,23 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 const formSchema = z.object({
   name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.',
+    message: "Name must be at least 2 characters.",
   }),
   email: z.string().email({
-    message: 'Please enter a valid email address.',
+    message: "Please enter a valid email address.",
   }),
   subject: z.string().min(5, {
-    message: 'Subject must be at least 5 characters.',
+    message: "Subject must be at least 5 characters.",
   }),
   message: z.string().min(10, {
-    message: 'Message must be at least 10 characters.',
+    message: "Message must be at least 10 characters.",
   }),
 });
 
@@ -42,32 +42,32 @@ type FormValues = z.infer<typeof formSchema>;
 export default function Contact() {
   const { backgroundStyle } = useThemeStore();
   const { theme } = useTheme();
-  const isDark = theme === 'dark';
+  const isDark = theme === "dark";
   const backgroundClass = getBackgroundClass(backgroundStyle, isDark === true);
-  
+
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
     },
   });
 
   function onSubmit(data: FormValues) {
     setIsSubmitting(true);
-    
+
     // Simulate API call
     setTimeout(() => {
       console.log(data);
       setIsSubmitting(false);
       toast({
-        title: 'Message sent!',
-        description: 'Thank you for reaching out. I will get back to you soon.',
+        title: "Message sent!",
+        description: "Thank you for reaching out. I will get back to you soon.",
       });
       form.reset();
     }, 1500);
@@ -104,14 +104,14 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-semibold text-lg mb-1">Email</h4>
-                <p className="text-muted-foreground">deepakpahawa19@gmail.com</p>
+                <p className="text-muted-foreground">rohansharma@gmail.com</p>
               </div>
               <div>
                 <h4 className="font-semibold text-lg mb-1">Phone</h4>
                 <p className="text-muted-foreground">+91-99XXXX6068</p>
               </div>
             </div>
-            
+
             <div className="mt-8">
               <h4 className="font-semibold text-lg mb-4">Available for</h4>
               <ul className="space-y-2">
@@ -143,9 +143,12 @@ export default function Contact() {
           >
             <div className="bg-card rounded-xl border shadow-sm p-8">
               <h3 className="heading-md mb-6">Send Me a Message</h3>
-              
+
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-6"
+                >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
@@ -160,7 +163,7 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-                    
+
                     <FormField
                       control={form.control}
                       name="email"
@@ -175,7 +178,7 @@ export default function Contact() {
                       )}
                     />
                   </div>
-                  
+
                   <FormField
                     control={form.control}
                     name="subject"
@@ -189,7 +192,7 @@ export default function Contact() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="message"
@@ -197,23 +200,23 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Message</FormLabel>
                         <FormControl>
-                          <Textarea 
-                            placeholder="Your message" 
+                          <Textarea
+                            placeholder="Your message"
                             className="min-h-[120px]"
-                            {...field} 
+                            {...field}
                           />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                  
-                  <Button 
-                    type="submit" 
-                    className="w-full" 
+
+                  <Button
+                    type="submit"
+                    className="w-full"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message'} 
+                    {isSubmitting ? "Sending..." : "Send Message"}
                     <Send className="ml-2 h-4 w-4" />
                   </Button>
                 </form>
